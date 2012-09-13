@@ -14,7 +14,7 @@ if [ "$1" == "-c" ]; then
 	fi
 
 	cale=$3
-	first=echo ${cale:0:1}
+	first=${cale:0:1}
 	if [ "$first" != "/" ]; then 
 		cale=$(pwd)"/"$cale
 	fi
