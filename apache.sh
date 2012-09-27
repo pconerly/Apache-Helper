@@ -5,11 +5,13 @@ if [ "$1" == "-c" ]; then
 
 	if [ "$2" == "" ]; then
 		echo "Trebuie sa dai ca parametru numele noului site."
+		echo "You must give the action parameter."
 		exit
 	fi
 
 	if [ "$3" == "" ]; then
 		echo "Trebuie sa dai ca parametru calea catre noul site."
+		echo "You must give the new site as a parameter."
 		exit
 	fi
 
@@ -22,7 +24,8 @@ if [ "$1" == "-c" ]; then
 	[ ! -d $cale ] && mkdir $cale
 
 	if [ ! -d $cale ]; then
-		echo "Directorul pentru noul site nu s-a putut crea.";
+		echo "Directorul pentru noul site nu s-a putut crea."
+		echo "Directory for the new site could not be created."
 		exit
 	fi
 
@@ -48,6 +51,7 @@ elif [ "$1" == "-r" ]; then
 
 	if [ "$2" == "" ]; then
 		echo "Trebuie sa dai ca parametru numele site-ului pe care vrei sa-l stergi."
+		echo "You must give the name of the site if you want to delete it."
 		ls "/etc/apache2/sites-available"
 		exit
 	fi
@@ -59,6 +63,7 @@ elif [ "$1" == "-a" ]; then
 
 	if [ "$2" == "" ]; then
 		echo "Trebuie sa dai ca parametru numele site-ului pe care vrei sa-l activezi."
+		echo "You must give the name of the site if you want to activate it."
 		ls "/etc/apache2/sites-available"
 		exit
 	fi
@@ -67,8 +72,8 @@ elif [ "$1" == "-a" ]; then
 
 else 
 
-	echo "-c nume_site calea/catre/noul/site";
-	echo "-r nume_site";
+	echo "-c nume_site calea/catre/noul/site"
+	echo "-r nume_site"
 	echo "-a nume_site"
 
 fi
